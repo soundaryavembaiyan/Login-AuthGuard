@@ -1,12 +1,13 @@
 .parent{
     background-color: #282A36;
+    height: 750px;
     display: flex;
     justify-content: center;
     align-items: center;
   }
   
   .card{
-      width: auto;
+      width: 500px;
       height: auto;
       background-color: white;
       display: flex;
@@ -30,8 +31,6 @@
   .login_register{
     display: flex;
     width: 100%;
-    border: 1px solid rgba(221, 221, 221, 1);
-    border-radius: 15px;
     margin: 20px 0;
   }
   
@@ -39,10 +38,10 @@
     font-size: 1em;
     padding: 10px 55px;
     border: none;
-    width: 50%;
   }
   
   .login_register a.login{
+    margin-left: 155px !important;
     border-radius: 15px;
     background: linear-gradient(90deg, #003A74, #006AD5);
     color: white;

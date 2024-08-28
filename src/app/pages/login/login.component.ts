@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -12,10 +12,10 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
 
-  loginObj:any = {
-    "EmailId": "",
-    "Password": ""
-  };
+  loginObj = {
+    "EmailId": "syadev@gmail.com",
+    "Password": "syadev"
+  }
 
   http = inject(HttpClient);
   
@@ -24,18 +24,17 @@ export class LoginComponent {
   }
 
   onLogin() {
-    debugger;
+    //console.log('Login Object:', this.loginObj);
     this.http.post("https://freeapi.miniprojectideas.com/api/User/Login", this.loginObj).subscribe((res:any)=>{
-      debugger;
+      console.log('res',res)
       if(res.result) {
         alert("Login Success");
-        localStorage.setItem("angular18Login",this.loginObj.User);
-        this.router.navigateByUrl("dashboard")
+        // localStorage.setItem("angular18Login",this.loginObj.User);
+        // this.router.navigateByUrl("dashboard")
       } else {
         alert("Check User Name or Password")
       }
     })
-
   }
 
 }
